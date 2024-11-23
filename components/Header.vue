@@ -9,7 +9,9 @@
 						<NuxtImg src="/svgs/search-icon.svg" class="h-6 w-6" />
 					</li>
 				</ul>
-				<div class="cursor-pointer">Login</div>
+				<div class="cursor-pointer hover:text-neutral-300 transition-colors">
+					Login
+				</div>
 			</div>
 		</div>
 	</header>

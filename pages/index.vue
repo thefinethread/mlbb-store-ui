@@ -1,5 +1,6 @@
 <template>
-  <div>
-    home
-  </div>
+	<div>
+		<SlideShow />
+		<div class=""></div>
+	</div>
 </template>
