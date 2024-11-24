@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<SlideShow />
+		<!-- <SlideShow /> -->
 		<div class=" flex flex-col gap-4 px-4 my-9">
 			<HomePopularGamesContainer :data="response.popular"/>
 		</div>
@@ -65,7 +65,8 @@ const response = {
 		displayName: 'Xbox Game Pass Core',
 		tag: 'Buy 1 Get 1',
 		isAvailable: true,
-	},
+			},
+		
 ],
 
 		hasMore: true

@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="cardInfo.slug">
+  <NuxtLink :to="cardInfo.slug" >
     <div class="h-64 w-[11.25rem] rounded-2xl overflow-hidden cursor-pointer relative flex flex-col justify-end group">
       <NuxtImg :src="cardInfo.logo" class="h-full w-full object-cover absolute top-0 left-0 group-hover:opacity-80 transition-opacity"/>
 
