@@ -1,7 +1,11 @@
 <template>
 	<header class="h-16 w-full fixed top-0 left-0 z-50 backdrop-blur-lg">
-		<div class="w-full h-full flex justify-between items-center px-8 backdrop-blur-lg">
-			<NuxtImg src="/svgs/store-logo.svg" class="h-10 w-10" />
+		<div
+			class="w-full h-full flex justify-between items-center px-8 backdrop-blur-lg"
+		>
+			<NuxtLink to="/">
+				<NuxtImg src="/svgs/store-logo.svg" class="h-10 w-10" />
+			</NuxtLink>
 
 			<div class="flex gap-6 items-center justify-between">
 				<ul>
