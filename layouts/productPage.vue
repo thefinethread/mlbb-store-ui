@@ -1,7 +1,7 @@
 <template>
-	<div class="bg-[#171717] min-h-dvh w-full text-neutral-50 overflow-x-hidden">
+	<div class="bg-[#171717] min-h-dvh w-full text-neutral-50 ">
 		<Header />
-		<main class="mt-20 w-full">
+		<main class="pt-20 w-full">
 			<slot />
 		</main>
 		<Footer />

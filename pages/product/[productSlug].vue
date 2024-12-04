@@ -1,78 +1,12 @@
 <template>
 	<div>
-		<div
-			class="h-96 aspect-square object-cover sm:h-60 w-full relative"
-			id="Product_cover"
-		>
-			<div
-				class="absolute left-0 top-0 w-full h-full"
-				style="background: linear-gradient(to right, #00000099 0%, #ffffff30)"
-			>
-				<div
-					class="max-w-7xl justify-center sm:justify-start h-full px-3 sm:px-8 flex flex-col sm:flex-row gap-8 sm:gap-20 items-center sm:items-end"
-				>
-					<NuxtImg
-						:src="response.productLogo"
-						class="w-48 sm:w-60 aspect-square rounded-2xl sm:translate-y-8"
-					/>
-					<div class="sm:pb-8">
-						<h1 class="uppercase text-2xl sm:text-4xl font-semibold mb-4">
-							{{ response.heading }}
-						</h1>
-						<div
-							class="text-xs sm:text-sm text-neutral-300 flex gap-4 justify-center sm:justify-start"
-						>
-							<div class="flex gap-2 items-center">
-								<NuxtImg
-									:src="regionFlags[response.region.regionCode]"
-									class="h-6 w-6"
-								/>
+		<ProductHeader :response="response" />
 
-								<p class="">{{ response.region.regionName }}</p>
-							</div>
-							<div class="flex gap-2 items-center">
-								<NuxtImg src="/svgs/energy.svg" class="w-5 rounded-full" />
-								<p v-html="response.headingDescription"></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div
-			class="mt-10 sm:mt-20 max-w-7xl flex-col md:flex-row flex gap-8 w-full mx-auto px-8"
-		>
-			<ul class="grid lg:grid-cols-2 gap-4 flex-1">
-				<li
-					v-for="item in response.itemsList"
-					class="bg-opacity-5 bg-neutral-50 rounded-lg px-4 py-6 flex items-center gap-3 w-full justify-between"
-				>
-					<NuxtImg :src="item.itemImage" class="w-14" />
-					<div class="flex-1 text-sm flex flex-col gap-2">
-						<p class="text-neutral-300 font-medium">{{ item.amount }}</p>
-
-						<span
-							class="bg-green-600 font-medium px-2 py-[5px] inline-block rounded-md w-max"
-						>
-							{{ item.tag }}
-						</span>
-					</div>
-					<div class="text-sm flex gap-3 text-custom-blue">
-						<span class="line-through text-orange-600">₹{{ item.price }}</span>
-						<span class="font-medium">₹{{ item.discountedPrice }}</span>
-					</div>
-				</li>
-			</ul>
-
-			<div class="w-96 bg-red-700 h-20">right</div>
-		</div>
+		<ProductDetails :response="response" />
 	</div>
 </template>
 
 <script setup>
-import { regionFlags } from '~/components/product/constant';
-
 const route = useRoute();
 
 console.log(route.params);
@@ -84,6 +18,16 @@ const response = {
 		regionCode: 'in',
 		regionName: 'India',
 	},
+	orderFields: [
+		{
+			id: 'user-id',
+			name: 'User ID'
+		},
+		{
+			id: 'server-id',
+			name: 'Server ID'
+		},
+	],
 	headingDescription: 'Instant Delivery',
 	slug: 'mobile-legends',
 	productLogo:
