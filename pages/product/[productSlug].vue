@@ -1,17 +1,11 @@
 <template>
-	<div>
-		<ProductHeader :response="response" />
-
-		<ProductDetails :response="response" />
-	</div>
+	<ProductContainer :data="response" />
 </template>
 
-<script setup>
-const route = useRoute();
+<script setup lang="ts">
+import type { ProductResponse } from '~/types/product/types';
 
-console.log(route.params);
-
-const response = {
+const response: ProductResponse = {
 	id: '1',
 	heading: 'Mobile Legends',
 	region: {
@@ -21,11 +15,11 @@ const response = {
 	orderFields: [
 		{
 			id: 'user-id',
-			name: 'User ID'
+			name: 'User ID',
 		},
 		{
 			id: 'server-id',
-			name: 'Server ID'
+			name: 'Server ID',
 		},
 	],
 	headingDescription: 'Instant Delivery',
@@ -53,7 +47,7 @@ const response = {
 	itemsList: [
 		{
 			id: '13',
-			amount: '86 Diamonds',
+			amount: '86 + 16 Diamonds',
 			isAvailable: true,
 			profit: '91',
 			price: '104',
@@ -66,7 +60,7 @@ const response = {
 		},
 		{
 			id: '23',
-			amount: '172 Diamonds',
+			amount: '172 + 16 Diamonds',
 			isAvailable: true,
 			profit: '182',
 			price: '196',
@@ -79,7 +73,7 @@ const response = {
 		},
 		{
 			id: '25',
-			amount: '257 Diamonds',
+			amount: '257 + 16 Diamonds',
 			isAvailable: true,
 			profit: '272',
 			price: '296',
@@ -92,7 +86,7 @@ const response = {
 		},
 		{
 			id: '13 25',
-			amount: '343 Diamonds',
+			amount: '343 + 16 Diamonds',
 			isAvailable: true,
 			profit: '363',
 			price: '388',
@@ -105,7 +99,7 @@ const response = {
 		},
 		{
 			id: '23 23',
-			amount: '344 Diamonds',
+			amount: '344 + 16 Diamonds',
 			isAvailable: true,
 			profit: '364',
 			price: '392',
@@ -118,7 +112,7 @@ const response = {
 		},
 		{
 			id: '23 25',
-			amount: '429 Diamonds',
+			amount: '429 + 16 Diamonds',
 			isAvailable: true,
 			profit: '454',
 			price: '484',
@@ -531,15 +525,3 @@ definePageMeta({
 	layout: 'product-page',
 });
 </script>
-
-<style>
-#Product_cover {
-	background-color: rgba(70, 76, 100, 1);
-
-	background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMTkyMCAxMDAwIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPnBhdGh7b3BhY2l0eTouMTtjbGlwLXBhdGg6dXJsKCNjbGlwUGF0aCk7ZmlsbDp1cmwoI2xpbmVhckdyYWRpZW50KTt9PC9zdHlsZT48Y2xpcFBhdGggaWQ9ImNsaXBQYXRoIj48cmVjdCB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDAwIi8+PC9jbGlwUGF0aD48bGluZWFyR3JhZGllbnQgaWQ9ImxpbmVhckdyYWRpZW50IiB4MT0iMCUiIHkxPSIwJSIgeDI9IjkwJSIgeTI9IjAlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9ImhzbCgwIDAlIDEwMCUvMSkiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9ImhzbCgwIDAlIDEwMCUvMCkiLz48L2xpbmVhckdyYWRpZW50PjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE5MjAsMTAwMClzY2FsZSgtMSwtMSkiPjxwYXRoIGQ9Ik0xMzg0LjUgMzQzLjJMMTkyLjcgMTUzNWwtMjEzLjUtM0wxMzgzIDEyOC4ybDEuNSAyMTV6Ii8+PHBhdGggZD0iTTE5MTkuNyA0NDguM0wxMzU5IDEwMDlsLTEwMC40LTEuNEwxOTE5IDM0Ny4xbC43IDEwMS4yeiIvPjxwYXRoIGQ9Ik0xMTc2LjcgNTE0LjNMNjE2IDEwNzVsLTEwMC40LTEuNEwxMTc2IDQxMy4xbC43IDEwMS4yeiIvPjxwYXRoIGQ9Ik02NDQuNyA0NTcuM0w4NCAxMDE4bC0xMDAuNC0xLjRMNjQ0IDM1Ni4xbC43IDEwMS4yeiIvPjxwYXRoIGQ9Ik0xMzg3LjcgNDQ4LjNMODI3IDEwMDlsLTEwMC40LTEuNEwxMzg3IDM0Ny4xbC43IDEwMS4yeiIvPjxwYXRoIGQ9Ik0xMjUwLjEgNDkzLjhsLTU0NSA1NDUtNTIuNyA0My42IDY0MS45LTY0MS45LTQ0LjIgNTMuM3oiLz48cGF0aCBkPSJNODkxLjEgNjM5LjFMLTc3OCAyMzA4LjNsLTI5OC45LTQuMkw4ODkgMzM4LjFsMi4xIDMwMXoiLz48cGF0aCBkPSJNMTg3MC40IDQxOS44TC0yOC44IDIzMTlsLTM0MC4xLTQuOEwxODY4IDc3LjNsMi40IDM0Mi41eiIvPjxwYXRoIGQ9Ik05MDguNCA0MzYuOEwtOTkwLjggMjMzNmwtMzQwLjEtNC44TDkwNiA5NC4zbDIuNCAzNDIuNXoiLz48cGF0aCBkPSJNMTYzMi40IDUxNS44TC0yNjYuOCAyNDE1bC0zNDAuMS00LjhMMTYzMCAxNzMuM2wyLjQgMzQyLjV6Ii8+PHBhdGggZD0iTTExNzYuMyA1NjcuMUwtMTQ0NS42IDMxODlsLTQ2OS41LTYuNkwxMTczIDk0LjNsMy4zIDQ3Mi44eiIvPjxwYXRoIGQ9Ik0xNDI3LjMgNTgwLjFMLTExOTQuNiAzMjAybC00NjkuNS02LjZMMTQyNCAxMDcuM2wzLjMgNDcyLjh6Ii8+PHBhdGggZD0iTTE2NDkuNSA4ODAuMkw0NTcuNyAyMDcybC0yMTMuNS0zTDE2NDggNjY1LjJsMS41IDIxNXoiLz48cGF0aCBkPSJNNjc1LjggNTIyLjJsLTI2MjEuOSAyNjIxLjktNDY5LjQtNi42TDY3Mi41IDQ5LjRsMy4zIDQ3Mi44eiIvPjxwYXRoIGQ9Ik0yNTk1LjkgNTIyLjJMLTI2IDMxNDQuMWwtNDY5LjUtNi42TDI1OTIuNiA0OS40bDMuMyA0NzIuOHoiLz48L2c+PC9zdmc+);
-
-	background-repeat: repeat-x;
-	background-position: top center;
-	background-size: clamp(60em, min(100dvw, 926px), 100em), cover;
-}
-</style>
