@@ -14,6 +14,7 @@ export type ItemCategory = {
 	id: string;
 	name: string;
 	order: number;
+	image: string;
 };
 
 export type Item = {

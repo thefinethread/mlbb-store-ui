@@ -32,16 +32,21 @@ const response: ProductResponse = {
 			id: 'diamond-packs',
 			name: 'Diamond Packs',
 			order: 1,
+			image:
+				'https://topupplayground.com/gallery/1731604743151--sale-diamonds.png',
 		},
 		{
 			id: 'special-bundles',
 			name: 'Special Bundles',
 			order: 3,
+			image: 'https://topupplayground.com/gallery/1721331418526--wppp.webp',
 		},
 		{
 			id: 'event-packs',
 			name: 'Event Packs',
 			order: 2,
+			image:
+				'https://topupplayground.com/gallery/1731604739017--big-pack-diamonds.png',
 		},
 	],
 	itemsList: [

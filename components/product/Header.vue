@@ -8,7 +8,7 @@
 			style="background: linear-gradient(to right, #00000099 0%, #ffffff30)"
 		>
 			<div
-				class="max-w-7xl justify-center sm:justify-start h-full px-3 sm:px-8 flex flex-col sm:flex-row gap-8 sm:gap-20 items-center sm:items-end"
+				class="max-w-7xl m-auto justify-center sm:justify-start h-full px-3 sm:px-8 flex flex-col sm:flex-row gap-8 sm:gap-20 items-center sm:items-end"
 			>
 				<NuxtImg
 					:src="data.productLogo"

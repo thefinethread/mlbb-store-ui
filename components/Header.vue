@@ -1,5 +1,5 @@
 <template>
-	<header class="h-16 w-full fixed top-0 left-0 z-50 backdrop-blur-lg">
+	<header class="h-16 w-full max-w-[90rem] m-auto fixed top-0 left-0 right-0 z-50 backdrop-blur-lg">
 		<div
 			class="w-full h-full flex justify-between items-center px-8 backdrop-blur-lg"
 		>
