@@ -1,6 +1,6 @@
 <template>
 	<div class="flex items-center text-xs gap-4 z-0">
-		<p class="font-medium">COPYRIGHT @ 2024 OREO STORE</p>
+		<p class="font-medium text-neutral-400">COPYRIGHT @ 2024 OREO STORE</p>
 		<span class="h-5 w-[1px] bg-white"></span>
 		<ul class="flex gap-8">
 			<li

@@ -15,9 +15,12 @@
 						<NuxtImg src="/svgs/search-icon.svg" class="h-6 w-6" />
 					</li>
 				</ul>
-				<div class="cursor-pointer hover:text-neutral-300 transition-colors">
+				<NuxtLink
+					to="/login"
+					class="cursor-pointer hover:text-neutral-300 transition-colors"
+				>
 					Login
-				</div>
+				</NuxtLink>
 			</div>
 		</div>
 	</header>

@@ -5,9 +5,12 @@
 				<NuxtImg src="/svgs/store-logo.svg" class="h-10 w-10" />
 			</NuxtLink>
 
-			<div class="cursor-pointer hover:text-neutral-300 transition-colors">
-				Login
-			</div>
+			<NuxtLink
+				to="/sign-up"
+				class="cursor-pointer hover:text-neutral-300 transition-colors"
+			>
+				Sign Up
+			</NuxtLink>
 		</div>
 	</header>
 </template>

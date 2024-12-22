@@ -31,4 +31,6 @@ defineProps<{
 	disabled?: boolean;
 	showCta?: boolean;
 }>();
+
+const emit = defineEmits(['handleCtaClick']);
 </script>
