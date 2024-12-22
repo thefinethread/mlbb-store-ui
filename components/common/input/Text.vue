@@ -34,8 +34,6 @@ defineProps<{
 }>();
 
 const model = defineModel<string | number>('modelValue');
-
-const emit = defineEmits(['handleCtaClick']);
 </script>
 
 <style>

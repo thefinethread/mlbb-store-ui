@@ -6,11 +6,21 @@
 			</NuxtLink>
 
 			<NuxtLink
-				to="/sign-up"
+				:to="authLinkData.path"
 				class="cursor-pointer hover:text-neutral-300 transition-colors"
 			>
-				Sign Up
+				{{ authLinkData.text }}
 			</NuxtLink>
 		</div>
 	</header>
 </template>
+
+<script setup lang="ts">
+const route = useRoute();
+
+const authLinkData = computed(() => {
+	return route.name === 'sign-up'
+		? { text: 'Login', path: '/login' }
+		: { text: 'Sign Up', path: '/sign-up' };
+});
+</script>
