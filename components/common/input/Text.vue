@@ -10,6 +10,7 @@
 			:class="[labelIconPath ? 'pl-14' : 'pl-8']"
 			:placeholder="placeholder"
 			:disabled="disabled"
+			v-model="model"
 		/>
 		<button
 			v-if="showCta"
@@ -32,5 +33,17 @@ defineProps<{
 	showCta?: boolean;
 }>();
 
+const model = defineModel<string | number>('modelValue');
+
 const emit = defineEmits(['handleCtaClick']);
 </script>
+
+<style>
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	margin: 0;
+}
+</style>
