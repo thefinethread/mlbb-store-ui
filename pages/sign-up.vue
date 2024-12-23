@@ -2,21 +2,16 @@
 	<NuxtLayout name="auth">
 		<AuthMainContainer
 			:input-fields="inputFields"
-			:form-data="formData"
 			@on-form-submit="handleSignUp"
 		/>
 	</NuxtLayout>
 </template>
 
 <script setup lang="ts">
+import { useAuthForm } from '~/composables/forms/useAuthForm';
 import type { FormData, InputField } from '~/types/auth/types';
 
-const formData = reactive<FormData>({
-	name: '',
-	email: '',
-	phone: '',
-	password: '',
-});
+const form = reactive(useAuthForm());
 
 const inputFields: InputField[] = [
 	{
@@ -46,9 +41,9 @@ const inputFields: InputField[] = [
 	},
 ];
 
-const handleSignUp = () => {
-	console.log(formData);
-};
+const handleSignUp = form.handleSubmit((values) => {
+	console.log(values);
+});
 
 definePageMeta({
 	layout: false,

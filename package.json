@@ -1,21 +1,23 @@
 {
-  "name": "mlbb-store-ui",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
-  },
-  "dependencies": {
-    "@nuxt/image": "^1.8.1",
-    "@nuxtjs/device": "^3.2.4",
-    "@nuxtjs/tailwindcss": "^6.12.2",
-    "nuxt": "^3.14.159",
-    "nuxt-swiper": "^2.0.0",
-    "vue": "latest",
-    "vue-router": "latest"
-  }
+	"name": "mlbb-store-ui",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "nuxt build",
+		"dev": "nuxt dev",
+		"generate": "nuxt generate",
+		"preview": "nuxt preview",
+		"postinstall": "nuxt prepare"
+	},
+	"dependencies": {
+		"@nuxt/image": "^1.8.1",
+		"@nuxtjs/device": "^3.2.4",
+		"@nuxtjs/tailwindcss": "^6.12.2",
+		"@vee-validate/nuxt": "^4.14.7",
+		"nuxt": "^3.14.159",
+		"nuxt-swiper": "^2.0.0",
+		"vue": "latest",
+		"vue-router": "latest",
+		"yup": "^1.6.1"
+	}
 }

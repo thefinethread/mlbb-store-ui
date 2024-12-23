@@ -15,7 +15,6 @@
 					:input-type="input.inputType"
 					:label-icon-path="input.labelIconPath"
 					:show-cta="input.showCta"
-					v-model="formData[input.id]"
 				>
 					<template #cta>
 						<img src="/svgs/right-arrow.svg" class="h-6" />
@@ -41,11 +40,10 @@
 
 <script setup lang="ts">
 import Primary from '~/components/common/button/Primary.vue';
-import type { FormData, InputField } from '~/types/auth/types';
+import type { InputField } from '~/types/auth/types';
 
 const props = defineProps<{
 	inputFields: InputField[];
-	formData: FormData;
 }>();
 
 const route = useRoute();
