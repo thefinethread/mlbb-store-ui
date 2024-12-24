@@ -3,6 +3,7 @@
 		<AuthMainContainer
 			:input-fields="inputFields"
 			@on-form-submit="handleSignUp"
+			:is-submit-button-disabled="isSubmitButtonDisabled"
 		/>
 	</NuxtLayout>
 </template>
@@ -12,6 +13,10 @@ import { useAuthForm } from '~/composables/forms/useAuthForm';
 import type { FormData, InputField } from '~/types/auth/types';
 
 const form = reactive(useAuthForm());
+
+const isSubmitButtonDisabled = computed(() => {
+	return !!Object.keys(form.errors).length;
+});
 
 const inputFields: InputField[] = [
 	{

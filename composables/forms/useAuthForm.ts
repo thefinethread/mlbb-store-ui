@@ -1,7 +1,7 @@
 import { signUpSchema } from '~/validation-schema/sign-up';
 
 export const useAuthForm = () => {
-	const { handleSubmit } = useForm({
+	const { handleSubmit, errors } = useForm({
 		validationSchema: signUpSchema(),
 		initialValues: {
 			name: '',
@@ -12,6 +12,7 @@ export const useAuthForm = () => {
 	});
 
 	return {
+		errors,
 		handleSubmit,
 	};
 };

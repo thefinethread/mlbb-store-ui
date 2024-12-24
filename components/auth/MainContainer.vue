@@ -15,6 +15,7 @@
 					:input-type="input.inputType"
 					:label-icon-path="input.labelIconPath"
 					:show-cta="input.showCta"
+					:is-submit-button-disabled="isSubmitButtonDisabled"
 				>
 					<template #cta>
 						<img src="/svgs/right-arrow.svg" class="h-6" />
@@ -42,9 +43,15 @@
 import Primary from '~/components/common/button/Primary.vue';
 import type { InputField } from '~/types/auth/types';
 
-const props = defineProps<{
-	inputFields: InputField[];
-}>();
+const props = withDefaults(
+	defineProps<{
+		inputFields: InputField[];
+		isSubmitButtonDisabled: boolean;
+	}>(),
+	{
+		isSubmitButtonDisabled: true,
+	}
+);
 
 const route = useRoute();
 

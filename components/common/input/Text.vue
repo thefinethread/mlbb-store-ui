@@ -16,9 +16,9 @@
 			/>
 			<button
 				v-if="showCta"
-				:disabled="!!errorMessage"
+				:disabled="isSubmitButtonDisabled"
 				:class="[
-					!!errorMessage
+					isSubmitButtonDisabled
 						? 'cursor-not-allowed bg-neutral-500'
 						: 'cursor-pointer bg-custom-blue',
 				]"
@@ -43,6 +43,7 @@ const props = defineProps<{
 	inputType?: InputTypeHTMLAttribute;
 	disabled?: boolean;
 	showCta?: boolean;
+	isSubmitButtonDisabled: boolean;
 }>();
 
 const { value, errorMessage, handleBlur, handleChange } = useField(
