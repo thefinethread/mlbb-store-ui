@@ -38,6 +38,7 @@ export type ProductResponse = {
 	headingDescription: string;
 	slug: string;
 	productLogo: string;
+	productCoverImage: string;
 	productCategory: string;
 	itemCategories: ItemCategory[];
 	itemsList: Item[];

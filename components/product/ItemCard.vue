@@ -3,8 +3,8 @@
 		class="rounded-lg px-4 py-6 flex items-center gap-3 w-full justify-between cursor-pointer"
 		:class="[
 			selectedItemId === item.id
-				? ' bg-custom-blue bg-opacity-10 ring-custom-blue ring-2'
-				: 'bg-neutral-800',
+				? ' bg-[#0b2f3c] ring-custom-blue ring-2'
+				: 'bg-neutral-900',
 		]"
 		@click="handleClick(item)"
 	>

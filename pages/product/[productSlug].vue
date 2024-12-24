@@ -27,6 +27,8 @@ const response: ProductResponse = {
 	productLogo:
 		'https://cdn.moogold.com/2019/11/mobile-legends-bang-bang-445x445.jpg',
 	productCategory: 'mobile-games',
+	productCoverImage:
+		'https://img-cdn-sg.payermax.com/shoplay365/prod/upload/app-goods/%E6%9C%AA%E6%A0%87%E9%A2%98-120241218053250913.jpg',
 	itemCategories: [
 		{
 			id: 'diamond-packs',

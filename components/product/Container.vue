@@ -1,6 +1,7 @@
 <template>
 	<div>
-		<ProductHeader :data="data" />
+		<ProductHeader v-if="!$device.isMobile" :data="data" />
+		<ProductPwaHeader v-if="$device.isMobile" :data="data" />
 
 		<div
 			class="mt-10 sm:mt-20 max-w-7xl flex-col md:flex-row flex gap-8 w-full mx-auto px-4"

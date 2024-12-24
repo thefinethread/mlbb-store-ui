@@ -1,7 +1,7 @@
 <template>
 	<div
 		v-if="itemCategories.length"
-		class="mb-8 border-0 border-neutral-700 bg-neutral-900 p-4 rounded-xl"
+		class="mb-8 border-0 border-neutral-700 bg-neutral-800 p-4 rounded-xl"
 	>
 		<h2 class="text-xl font-medium mb-6">Choose Category</h2>
 		<ul class="flex gap-3 overflow-x-auto no-scrollbar">
@@ -12,7 +12,7 @@
 				:class="
 					selectedCategoryId === category.id
 						? 'bg-[#0b2f3c]  ring-custom-blue text-custom-blue'
-						: 'bg-neutral-800 ring-neutral-700 text-neutral-300'
+						: 'bg-neutral-900 ring-neutral-700 text-neutral-300'
 				"
 				@click="filterItems(category.id)"
 			>
