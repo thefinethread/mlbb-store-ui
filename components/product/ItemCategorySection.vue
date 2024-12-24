@@ -1,18 +1,18 @@
 <template>
 	<div
 		v-if="itemCategories.length"
-		class="mb-8 border-0 border-neutral-700 bg-neutral-800 p-4 rounded-xl"
+		class="mb-8 ring-2 ring-neutral-800 bg-neutral-900 p-4 rounded-xl"
 	>
 		<h2 class="text-xl font-medium mb-6">Choose Category</h2>
 		<ul class="flex gap-3 overflow-x-auto no-scrollbar">
 			<li
 				v-for="category in sortedItemCategories"
 				:key="category.id"
-				class="text-xs flex-shrink-0 ring-inset rounded-2xl ring-2 text-wrap p-2.5 flex-col justify-center items-center text-center w-[112px] h-[138px] flex gap-2 cursor-pointer"
+				class="text-xs flex-shrink-0 ring-inset rounded-2xl text-wrap p-2.5 flex-col justify-center items-center text-center w-[112px] h-[138px] flex gap-2 cursor-pointer"
 				:class="
 					selectedCategoryId === category.id
-						? 'bg-[#0b2f3c]  ring-custom-blue text-custom-blue'
-						: 'bg-neutral-900 ring-neutral-700 text-neutral-300'
+						? 'bg-[#06191f] ring-2 ring-custom-blue text-custom-blue'
+						: 'bg-neutral-800 ring-neutral-700 text-neutral-300'
 				"
 				@click="filterItems(category.id)"
 			>
