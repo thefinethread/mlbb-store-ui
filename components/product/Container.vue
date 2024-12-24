@@ -3,7 +3,7 @@
 		<ProductHeader :data="data" />
 
 		<div
-			class="mt-10 sm:mt-20 max-w-7xl flex-col md:flex-row flex gap-8 w-full mx-auto px-8"
+			class="mt-10 sm:mt-20 max-w-7xl flex-col md:flex-row flex gap-8 w-full mx-auto px-4"
 		>
 			<ProductItemsSection
 				:selected-item-id="selectedItem?.id ?? ''"

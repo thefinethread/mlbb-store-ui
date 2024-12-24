@@ -1,21 +1,27 @@
 <template>
-	<div v-if="itemCategories.length" class="mb-8">
-		<ul class="flex sm:justify-end gap-2">
+	<div
+		v-if="itemCategories.length"
+		class="mb-8 border-0 border-neutral-700 bg-neutral-900 p-4 rounded-xl"
+	>
+		<h2 class="text-xl font-medium mb-6">Choose Category</h2>
+		<ul class="flex gap-3 overflow-x-auto no-scrollbar">
 			<li
 				v-for="category in sortedItemCategories"
 				:key="category.id"
-				class="text-xs rounded-xl sm:rounded-full text-wrap py-2 flex-col sm:flex-row text-center w-[90px] h-[90px] sm:h-auto sm:w-auto flex items-center gap-2 px-6 cursor-pointer"
+				class="text-xs flex-shrink-0 ring-inset rounded-2xl ring-2 text-wrap p-2.5 flex-col justify-center items-center text-center w-[112px] h-[138px] flex gap-2 cursor-pointer"
 				:class="
 					selectedCategoryId === category.id
-						? 'bg-green-400 bg-opacity-20 text-green-500'
-						: 'bg-opacity-10 bg-neutral-50 text-neutral-400'
+						? 'bg-[#0b2f3c]  ring-custom-blue text-custom-blue'
+						: 'bg-neutral-800 ring-neutral-700 text-neutral-300'
 				"
 				@click="filterItems(category.id)"
 			>
-				<NuxtImg :src="category.image" class="w-8" />
-				<p>
-					{{ category.name }}
-				</p>
+				<NuxtImg :src="category.image" class="w-12 flex-1" />
+				<div class="flex-1 flex justify-center items-center">
+					<p class="text-sm font-medium">
+						{{ category.name }}
+					</p>
+				</div>
 			</li>
 		</ul>
 	</div>
@@ -53,3 +59,9 @@ const filterItems = (id: string) => {
 	});
 };
 </script>
+
+<style>
+.no-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+</style>

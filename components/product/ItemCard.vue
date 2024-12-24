@@ -1,10 +1,10 @@
 <template>
 	<li
-		class="bg-opacity-5 rounded-lg px-4 py-6 flex items-center gap-3 w-full justify-between cursor-pointer"
+		class="rounded-lg px-4 py-6 flex items-center gap-3 w-full justify-between cursor-pointer"
 		:class="[
 			selectedItemId === item.id
-				? ' bg-custom-blue ring-custom-blue ring-2'
-				: 'bg-neutral-50',
+				? ' bg-custom-blue bg-opacity-10 ring-custom-blue ring-2'
+				: 'bg-neutral-800',
 		]"
 		@click="handleClick(item)"
 	>

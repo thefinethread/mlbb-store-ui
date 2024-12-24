@@ -1,15 +1,18 @@
 <template>
 	<div class="flex-1">
 		<ProductItemCategorySection :item-categories="itemCategories" />
-		<ul class="grid lg:grid-cols-2 gap-4">
-			<ItemCard
-				v-for="item in filteredItems"
-				:key="item.id"
-				:item="item"
-				:selected-item-id="selectedItemId"
-				@update-selected-item="updateSelectedItem"
-			/>
-		</ul>
+		<div class="bg-neutral-900 p-4 rounded-xl">
+			<h2 class="text-xl font-medium mb-6">Select Item</h2>
+			<ul class="grid lg:grid-cols-2 gap-4">
+				<ItemCard
+					v-for="item in filteredItems"
+					:key="item.id"
+					:item="item"
+					:selected-item-id="selectedItemId"
+					@update-selected-item="updateSelectedItem"
+				/>
+			</ul>
+		</div>
 	</div>
 </template>
 
