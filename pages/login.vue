@@ -1,41 +1,26 @@
 <template>
 	<NuxtLayout name="auth">
 		<AuthMainContainer
-			:input-fields="inputFields"
-			:form-data="formData"
-			@on-form-submit="handleLogin"
+			:input-fields="loginInputFields"
+			@on-form-submit="handleSignUp"
+			:is-submit-button-disabled="isSubmitButtonDisabled"
 		/>
 	</NuxtLayout>
 </template>
 
 <script setup lang="ts">
-import type { FormData, InputField } from '~/types/auth/types';
+import { useLoginForm } from '~/composables/forms/useLoginForm';
+import { loginInputFields } from '~/schema/auth';
 
-const formData = reactive<FormData>({
-	email: '',
-	password: '',
+const form = reactive(useLoginForm());
+
+const isSubmitButtonDisabled = computed(() => {
+	return !!Object.keys(form.errors).length;
 });
 
-const inputFields: InputField[] = [
-	{
-		id: 'email',
-		placeholder: 'Email',
-		inputType: 'email',
-		labelIconPath: '/svgs/email.svg',
-	},
-
-	{
-		id: 'password',
-		placeholder: 'Password',
-		inputType: 'password',
-		labelIconPath: '/svgs/lock.svg',
-		showCta: true,
-	},
-];
-
-const handleLogin = () => {
-	console.log(formData);
-};
+const handleSignUp = form.handleSubmit((values) => {
+	console.log(values);
+});
 
 definePageMeta({
 	layout: false,

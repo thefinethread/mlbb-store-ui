@@ -1,6 +1,6 @@
 import { signUpSchema } from '~/validation-schema/sign-up';
 
-export const useAuthForm = () => {
+export const useSignUpForm = () => {
 	const { handleSubmit, errors } = useForm({
 		validationSchema: signUpSchema(),
 		initialValues: {

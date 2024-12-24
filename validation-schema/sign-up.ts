@@ -1,8 +1,8 @@
 import * as yup from 'yup';
-import type { FormData } from '~/types/auth/types';
+import type { SignUpFormData } from '~/types/signup/types';
 
 export const signUpSchema = () => {
-	return yup.object<FormData>({
+	return yup.object<SignUpFormData>({
 		name: yup
 			.string()
 			.required('Name is required')

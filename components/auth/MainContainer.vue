@@ -41,7 +41,7 @@
 
 <script setup lang="ts">
 import Primary from '~/components/common/button/Primary.vue';
-import type { InputField } from '~/types/auth/types';
+import type { InputField } from '~/types/signup/types';
 
 const props = withDefaults(
 	defineProps<{

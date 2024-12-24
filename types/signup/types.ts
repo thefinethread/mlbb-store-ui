@@ -1,14 +1,14 @@
 import type { InputTypeHTMLAttribute } from 'vue';
 
-export type FormData = {
-	name?: string;
+export type SignUpFormData = {
+	name: string;
 	email: string;
-	phone?: string;
+	phone: string;
 	password: string;
 };
 
-export type InputField = {
-	id: keyof FormData;
+export type SignUpInputField = {
+	id: keyof SignUpFormData;
 	placeholder: string;
 	inputType: InputTypeHTMLAttribute;
 	labelIconPath: string;
